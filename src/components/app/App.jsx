@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import AppHeader from '../appHeader/AppHeader';
+import RandomChar from '../randomChar/RandomChar'
 
 const App = () => {
   return (
