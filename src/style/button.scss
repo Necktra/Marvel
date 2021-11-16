@@ -11,7 +11,12 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    //////////////////////////////////////
+
+    &__long {
+        display: block;
+        width: 170px;
+        margin: 45px auto 0 auto;
+    }
 
     .inner {
         position: relative;
