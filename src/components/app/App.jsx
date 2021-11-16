@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import AppHeader from '../appHeader/AppHeader';
+import CharInfo from '../charInfo/CharInfo';
 import CharList from '../charList/CharList';
 import RandomChar from '../randomChar/RandomChar'
 
@@ -12,7 +13,7 @@ const App = () => {
         <RandomChar/>
         <div className="char__content">
           <CharList/>
-          {/* <CharInfo/> */}
+          <CharInfo/>
           <div ></div>
         </div>
       </main>
