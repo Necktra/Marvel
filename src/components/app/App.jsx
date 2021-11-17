@@ -5,6 +5,7 @@ import CharInfo from '../charInfo/CharInfo';
 import CharList from '../charList/CharList';
 import RandomChar from '../randomChar/RandomChar';
 import decoration from '../../resources/img/Vision.png';
+// import Skeleton from '../skeleton/Skeleton';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <div className="char__content">
           <CharList />
           <CharInfo />
+          {/* <Skeleton /> */}
 
         </div>
         <img src={decoration} alt="Vision" className="bg-decoration" />
