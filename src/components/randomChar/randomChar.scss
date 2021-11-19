@@ -5,19 +5,22 @@
     grid-template-columns: repeat(2, 50%);
     align-items: center;
     //////////////////
+    //  box-sizing: border-box;
+    //   height: 250px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
 
     &__block {
         padding: 35px 40px;
         display: grid;
         grid-template-columns: 180px auto;
         column-gap: 30px;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+        // box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
     }
 
     &__img {
         width: 180px;
         height: 180px;
-        ////////////////////////////////
+        object-fit: cover;
     }
 
     &__info {
@@ -46,10 +49,11 @@
     }
 
     &__static {
-        padding: 40px 35px;
+        padding: 35px 40px;
         background-color: $dark;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+        // box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
         position: relative;
+         height: 250px;
         button {
             margin-top: 13px;
         }
