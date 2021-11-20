@@ -4,6 +4,7 @@ import CharInfo from '../charInfo/CharInfo';
 import CharList from '../charList/CharList';
 import RandomChar from '../randomChar/RandomChar';
 import decoration from '../../resources/img/Vision.png';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 // import Skeleton from '../skeleton/Skeleton';
 
 class App extends Component {
@@ -12,21 +13,27 @@ class App extends Component {
     selectedChar: null,
   }
 
-onCharSelected = (id) => {
-  this.setState({
-    selectedChar: id
-  })
-}
+  onCharSelected = (id) => {
+    this.setState({
+      selectedChar: id
+    })
+  }
 
   render() {
     return (
       <div className="app">
         <AppHeader />
         <main>
-          <RandomChar />
+          <ErrorBoundary>
+            <RandomChar />
+          </ErrorBoundary>
           <div className="char__content">
-            <CharList onCharSelected={this.onCharSelected}/>
-            <CharInfo charId={this.state.selectedChar}/>
+            <ErrorBoundary>
+              <CharList onCharSelected={this.onCharSelected} />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <CharInfo charId={this.state.selectedChar} />
+            </ErrorBoundary>
           </div>
           <img src={decoration} alt="Vision" className="bg-decoration" />
         </main>

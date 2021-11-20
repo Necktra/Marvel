@@ -14,7 +14,9 @@
             text-transform: uppercase;
         }
 
-        //////////////////////////////
+        .skeleton {
+            margin-top: 30px;
+        }
     }
 
     &__basics {
@@ -65,6 +67,10 @@
         }
     }
 
-    //////////////////
+    &__select {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+    }
 
 }
