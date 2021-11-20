@@ -14,43 +14,49 @@ class RandomChar extends Component {
         error: false
     }
 
+    marvelService = new MarvelService();
+
     componentDidMount() {
         this.updateChar();
         //this.timerId = setInterval(this.updateChar, 3000);
     }
 
     componentWillUnmount() {
-       // clearInterval(this.timerId);
+        // clearInterval(this.timerId);
     }
 
     onError = () => {
-        this.setState({loading: false, error: true})
+        this.setState({ loading: false, error: true })
     }
 
-    marvelService = new MarvelService();
-
     onCharLoaded = (char) => {
-        this.setState({char, loading: false})
+        this.setState({ char, loading: false })
+    }
+
+    onCharLoading = () => {
+        this.setState({ loading: true })
     }
 
     tryRandomChar = () => {
         this.updateChar();
+
         //clearInterval(this.timerId);
         //this.timerId = setInterval(this.updateChar, 3000);
     }
 
     updateChar = () => {
-        const id = Math.floor(Math.random()*(1011400 - 1011000) + 1011000);
+        const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+        this.onCharLoading();
         this.marvelService.getCharacter(id)
-        .then(this.onCharLoaded)
-        .catch(this.onError);
+            .then(this.onCharLoaded)
+            .catch(this.onError);
     }
 
     render() {
-        const {char, loading, error} = this.state;
-        const errorMessage = error ? <ErrorMessage/> : null;
-        const spinner = loading ? <Spinner/> : null;
-        const content = !(loading || error) ? <View char={char}/> : null;
+        const { char, loading, error } = this.state;
+        const errorMessage = error ? <ErrorMessage /> : null;
+        const spinner = loading ? <Spinner /> : null;
+        const content = !(loading || error) ? <View char={char} /> : null;
 
         return (
             <div className="randomchar">
@@ -70,34 +76,34 @@ class RandomChar extends Component {
     }
 }
 
-const View = ({char}) => {
+const View = ({ char }) => {
 
-    const {name, description, thumbnail, homepage, wiki} = char;
+    const { name, description, thumbnail, homepage, wiki } = char;
 
-    let imgStyle = {'objectFit' : 'cover'};
+    let imgStyle = { 'objectFit': 'cover' };
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-        imgStyle = {'objectFit' : 'contain'};
+        imgStyle = { 'objectFit': 'contain' };
     }
 
-    return(<div className="randomchar__block">
-    <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle}/>
+    return (<div className="randomchar__block">
+        <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle} />
 
-    <div className="randomchar__info">
-        <p className="randomchar__name">{name}</p>
-        <p className="randomchar__descr">
-            {description}
-        </p>
+        <div className="randomchar__info">
+            <p className="randomchar__name">{name}</p>
+            <p className="randomchar__descr">
+                {description}
+            </p>
 
-        <div className="randomchar__btns">
-            <a href={homepage} className="button button__main">
-                <div className="inner">homepage</div>
-            </a>
-            <a href={wiki} className="button button__secondary">
-                <div className="inner">Wiki</div>
-            </a>
+            <div className="randomchar__btns">
+                <a href={homepage} className="button button__main">
+                    <div className="inner">homepage</div>
+                </a>
+                <a href={wiki} className="button button__secondary">
+                    <div className="inner">Wiki</div>
+                </a>
+            </div>
         </div>
-    </div>
-</div>)
+    </div>)
 }
 
 export default RandomChar;
