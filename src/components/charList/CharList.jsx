@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './charList.scss';
 import './../../style/button.scss';
@@ -99,6 +100,10 @@ class CharList extends Component {
         </div>)
     }
 
+}
+
+CharList.propTypes = {
+    onCharSelected: PropTypes.func.isRequired
 }
 
 export default CharList;
