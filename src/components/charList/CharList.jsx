@@ -72,8 +72,6 @@ class CharList extends Component {
     renderItems = (arr) => {
         let imgStyle = { 'objectFit': 'cover' };
 
-        //let listStyle = {'char_selected' : };
-
         const items = arr.map((item, i) => {
 
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
