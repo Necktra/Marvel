@@ -5,7 +5,6 @@ import CharList from '../charList/CharList';
 import RandomChar from '../randomChar/RandomChar';
 import decoration from '../../resources/img/Vision.png';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
-// import Skeleton from '../skeleton/Skeleton';
 
 class App extends Component {
 
