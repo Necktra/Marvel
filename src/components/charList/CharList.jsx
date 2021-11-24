@@ -19,7 +19,7 @@ const CharList = ({ onCharSelected }) => {
     useEffect(() => { onRequest(offset, true) }, []);
 
     const onRequest = (offset, initial) => {
-        initial ? setNewItemLoading(true) : setNewItemLoading(false);
+        initial ? setNewItemLoading(false) : setNewItemLoading(true);
         getAllCharacters(offset).then(onCharListLoaded
         );
     }

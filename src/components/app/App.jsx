@@ -6,6 +6,7 @@ import RandomChar from '../randomChar/RandomChar';
 import decoration from '../../resources/img/Vision.png';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import AppBanner from '../appBanner/AppBanner';
+import ComicsList from '../comicsList/ComicsList';
 
 const App = () => {
 
@@ -20,6 +21,8 @@ const App = () => {
       <AppHeader />
       <main>
         <AppBanner/>
+        <ComicsList/>
+
 
         {/* <ErrorBoundary>
           <RandomChar />
