@@ -1,9 +1,10 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage as FormikErrorMessage } from 'formik';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 import useMarvelService from '../../services/MarvelService';
 import '../../style/button.scss';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 import './charSearchForm.scss';
 
 const CharSearchForm = () => {
@@ -62,7 +63,7 @@ const CharSearchForm = () => {
                         </button>
 
                     </div>
-                    <ErrorMessage name="charName" component="div" className="char__search-error" />
+                    <FormikErrorMessage name="charName" component="div" className="char__search-error" />
                 </Form>
             </Formik>
             {errorMessage}
