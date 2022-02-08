@@ -6,10 +6,7 @@
   <img src="https://img.shields.io/badge/react-17.0.2-brightgreen">
 </p>
 
-
-
-
-
+Данный проект использует данные из <a  href="https://developer.marvel.com/">Marvel API</a>. 
 
 ## Project setup
 
